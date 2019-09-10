@@ -1,0 +1,36 @@
+public class CallByValue {
+
+  public static void main( String[] args ) {
+    CallByValue callByValue = new CallByValue();       // 1
+    callByValue.mAge = 30;                             // 2
+    callByValue.aMethod( callByValue );                // 3
+    System.out.println("Age is " + callByValue.mAge ); // 5
+
+    int myInt = 5;
+    callByValue.bMethod( myInt );
+    System.out.println("myInt is " + myInt );
+
+    int gig = 0;
+    System.out.println("gig is " + gig);
+    int j = gig++;
+    System.out.println("gig is " + gig + " j is " + j);
+
+    int k = 0;
+    int l = ++k;
+    System.out.println("k is " + k + " l is " + l);
+
+    if ( l == 1 | k++ == 2 ) {
+      System.out.println("k is " + k + " l is " + l);
+    }
+  }
+
+  void aMethod( CallByValue cbv ) {
+    cbv.mAge++;                                        // 4
+  }
+
+  void bMethod( int i ) {
+    i++;
+  }
+
+  int mAge;  // Instance variable
+}

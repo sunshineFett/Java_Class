@@ -1,0 +1,59 @@
+
+class SuperBlob {
+
+  static int idCounter;
+  static int population;
+
+  protected int blobId;
+
+  public SuperBlob() {
+      blobId = idCounter++;
+      ++population;
+  }
+
+  protected void finalize() throws Throwable {
+      super.finalize();
+      --population;
+  }
+}
+
+class Blob extends SuperBlob {
+
+  int[] fat;
+
+  public Blob(int bloatedness) {
+      fat = new int[bloatedness];
+      System.out.println(blobId + ": Hello");
+  }
+
+  protected void finalize() throws Throwable {
+      super.finalize();
+      System.out.println(blobId + ": Bye");
+  }
+
+}
+
+public class Finalizers {
+
+  public static void main(String[] args) {
+
+      int blobsRequired, blobSize;
+
+      try {
+        blobsRequired = Integer.parseInt(args[0]);
+        blobSize = Integer.parseInt(args[1]);
+      } catch (IndexOutOfBoundsException e) {
+          System.out.println("Usage:  Finalizers <number of blobs> <blob size>");
+          return;
+      }
+
+      for(int i=0; i<blobsRequired; ++i) {
+        try {
+          new Blob(blobSize).finalize();
+        } catch (Throwable t) {
+          t.printStackTrace();
+        }
+      }
+      System.out.println(SuperBlob.population + " blobs alive");
+  }
+}
