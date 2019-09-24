@@ -1,0 +1,114 @@
+
+import java.util.*;
+
+
+public class OuterClassName {
+    // can contain instance variables and methods
+    // can contain static variables and methods
+
+    final int y = 7;
+
+
+    // Example1:  Top-Level Nested Class
+    static class StaticInnerClassName {
+        // can contain instance variables and methods
+        // can contain static variables and methods
+        // can access static data from outerclass
+        // can't access instance variables or methods from OuterClass
+        // can be of any accessibility
+    }
+
+    // Example2:  Non-static inner class
+    class InnerClassName {
+        // can contain instance variables and methods
+        // can't contain static variables or methods
+        // can access all variables and methods of OuterClass
+        // can be of any accessibility
+    }
+
+    // Anonymous Local Inner Class
+    // cannot be static
+    // can only access final variables of the enclosing method can access
+    // all static and instance variables declared at the outer-class level.
+    public void aMethod() {
+        final int num = 9;
+        String a = new String("Dog");
+        String b = new String("Cat");
+        // Combines the declaring of the inner class and creating
+        // of an instance of the class in one step
+        Comparator comp = new Comparator () {
+            public int compare(Object a, Object b) {
+                int result = 0;
+                System.out.println("Inside Comparator anonymous inner class");
+                return result;
+            }
+        };
+        System.out.println(comp.compare("dog","cat"));
+        // NOTE:  Anonymous classes are actually created first, then you are
+        // able to create an instance of them.  Example:  Comparator is a
+        // class declared within the java.util package.  It is an interface.
+    }
+
+    // Local Inner Class
+    // cannot be static
+    public void bMethod() {
+        class AnotherInnerClass {
+            void sayHelloFromAnotherInnerClass() {
+                System.out.println("Hello, from Another Inner Class");
+            }
+        }; // end of AnotherInnerClass
+
+        // Instantiate an object of AnotherInnerClas
+        AnotherInnerClass aic = new AnotherInnerClass();
+        aic.sayHelloFromAnotherInnerClass();
+    }
+
+    public void cMethod() {
+        new Comparator() {
+          public int compare(Object a, Object b) {
+            return 0;
+          }
+        };
+    }
+
+    public static void main(String[] args) {
+        // To instantiate the outer class
+        OuterClassName ocn = new OuterClassName();
+
+        // To instantiate the static inner class
+        StaticInnerClassName sicn = new StaticInnerClassName();
+
+        // To instantiate the instance (non-static) inner class
+        OuterClassName.InnerClassName icn = ocn.new InnerClassName();
+
+        // To use the bMethod; implementation in anonymouse inner class is hidden
+        ocn.aMethod();
+
+        // To use the bMethod; implementation in AnotherInnerClass is hidden
+        ocn.bMethod();
+    }
+}
+
+
+class ClassName {
+
+    // body of class
+
+    // Example3:  Local Class (type of inner class)
+    public void methodName() {
+        class LocalInnerClassName{
+            // body of inner class
+        }
+    }
+
+    // Example 4:  Anonymous Class (type of inner class)
+    public void anotherMethodName() {
+        new Comparator() {
+            public int compare(Object a, Object b) {
+                int result = 0;
+                // do something here
+                return result;
+            }
+        };
+    }
+}

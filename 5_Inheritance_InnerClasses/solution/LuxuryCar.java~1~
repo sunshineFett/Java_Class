@@ -1,0 +1,35 @@
+
+import java.awt.*;
+
+public class LuxuryCar extends Car{
+
+  public LuxuryCar() {}
+
+  public LuxuryCar(String size, Color color, int year, String make) {
+      _size = size;
+      _color = color;
+      _year = year;
+      _make = make;
+  }
+
+  public void descCar() {
+      class CarDescription {
+        String _size = "Large-sized sedan";
+      };
+    CarDescription cd = new CarDescription();
+    System.out.println("My car is " + cd._size + " " + _color + " " + _year +" "+ _make);
+  }
+
+  public static void main(String[] args) {
+    LuxuryCar lc = new LuxuryCar("medium-sized sedan", Color.darkGray, 2002, "Lexus");
+    lc.descCar();
+    lc.changeOil();
+    lc.rotateTires();
+    lc.tuneup();
+  }
+
+  private String _size;
+  private Color _color;
+  private int _year;
+  private String _make;
+}

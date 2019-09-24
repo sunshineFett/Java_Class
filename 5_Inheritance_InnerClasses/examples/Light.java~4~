@@ -1,0 +1,58 @@
+
+abstract class Light {
+
+  // Default constructor
+  public Light() {
+  }
+
+  // Abstract instance method
+  abstract public double KWHprice();
+
+  // Instance methods
+  public void switchOn() { indicator = true; }
+  public void switchOff() { indicator = false; }
+  public boolean isOn() { return indicator; }
+
+  // Instance variables
+  int noOfWatts;
+  boolean indicator;
+  String location;
+}
+
+class TubeLight extends Light {
+
+    // Implementation of inherited abstract method
+    public double KWHprice() { return 2.75; }
+
+    // if switchOff is made private, the subclass cannot access it
+    public static void main(String[] args) {
+        TubeLight tl = new TubeLight();
+        tl.switchOff();
+    }
+
+    // "super" and "this" are very similar
+    // neither can be accessed within a static method or static block
+    public void myTestingMethod() {
+        super.switchOff();
+        this.switchOn();
+    }
+    // Instance variables
+    int tubeLength;
+    int color;
+}
+
+class Factory {
+
+    public Factory() {
+        seeClass();
+    }
+
+    public void seeClass() {
+      System.out.println(Class.forName(cellarLight).getName());
+      System.out.println(Class.forName(spotLight).getName());
+    }
+
+    TubeLight cellarLight = new TubeLight();
+    Light spotLight = new TubeLight();
+
+}
