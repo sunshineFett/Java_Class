@@ -1,0 +1,69 @@
+
+public class ExceptionExample {
+    
+    public void usingTryCatch( String name, Integer num, int smallNum ) {
+        
+        try {
+            
+            System.out.println("usingTryCatch() method");
+            // some if statement here
+            throw new InterruptedException();
+            
+        } catch ( InterruptedException iex ) {
+            System.out.println("This is the exception object " + iex);
+            System.out.println("ExceptionExample handled in usingTryCatch: " + iex);
+            try {
+                Class[] params = { name.getClass(), num.getClass(), Integer.TYPE };
+                System.out.println("Exception Handler is " + Class.forName("ExceptionExample").getMethod("usingTryCatch", params ));
+            } catch (ClassNotFoundException cnfe) {
+                cnfe.printStackTrace();
+            } catch (NoSuchMethodException nsme) {
+               nsme.printStackTrace();
+            }
+            iex.printStackTrace();
+        }
+    }
+    
+    public void usingThrows() throws InterruptedException {
+        // leaves handling this exception to the caller
+        System.out.println("usingThrows() method...");
+    }
+    
+    public void throwsAnException() throws MyException {
+        // some code that causes an exception
+        throw new MyException("Something BAD happened!");
+    }
+    
+    public static void main(String[] args) {
+        ExceptionExample ee = new ExceptionExample();
+        // Example #1.  Letting the method invoked handle the exception
+        ee.usingTryCatch("my name", new Integer(5), 5);
+        
+        // Example #2.  Handling the exception locally
+        try {
+            ee.usingThrows();
+        } catch (InterruptedException iex) {
+            System.out.println("ExceptionExample.main(): " + iex);
+            iex.printStackTrace();
+        }
+        
+        // Example #3.  Throwing and handling an exception locally
+        try {
+            ee.throwsAnException();
+        } catch( MyException mex ) {
+            System.out.println( "ExceptionExample.main(): " + mex );
+        }
+        
+    }
+}
+
+// a custom exception class
+class MyException extends Exception {
+    public MyException() {
+        super();
+    }
+    
+    public MyException( String description ) {
+        super( description );
+    }
+}

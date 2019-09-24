@@ -1,0 +1,538 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="ExceptionsErroOutline_files/filelist.xml">
+<title>Exceptions and Error Handling</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Valued Sony Customer</o:Author>
+  <o:LastAuthor>Sunny Wear</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>34</o:TotalTime>
+  <o:Created>2003-01-11T21:08:00Z</o:Created>
+  <o:LastSaved>2003-01-11T21:08:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>92</o:Words>
+  <o:Characters>530</o:Characters>
+  <o:Lines>4</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>621</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-even-footer:url("ExceptionsErroOutline_files/header.htm") ef1;
+	mso-footer:url("ExceptionsErroOutline_files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:352221708;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-885483434 110637782 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.5in;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:389110584;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1864043114 67698709 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-number-format:alpha-upper;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:496774351;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2123889740 67698709 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-number-format:alpha-upper;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l2:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:571506027;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2027218256 67698707 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:right;
+	margin-left:.75in;
+	text-indent:-9.0pt;}
+@list l3:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:1.75in;
+	mso-level-number-position:right;
+	margin-left:1.75in;
+	text-indent:-9.0pt;}
+@list l4
+	{mso-list-id:643778597;
+	mso-list-type:hybrid;
+	mso-list-template-ids:283168714 67698709 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-number-format:alpha-upper;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:708185817;
+	mso-list-type:hybrid;
+	mso-list-template-ids:753408868 2052886026 -2133848240 -1227822858 -961016800 1872662856 113036434 -1751104584 2100061342 1782465898;}
+@list l5:level1
+	{mso-level-start-at:4;
+	mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.5in;}
+@list l6
+	{mso-list-id:826673629;
+	mso-list-type:hybrid;
+	mso-list-template-ids:753408868 648563916 -2133848240 -1227822858 -961016800 1872662856 113036434 -1751104584 2100061342 1782465898;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:925531991;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1237369970 -318337578 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l7:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.5in;}
+@list l8
+	{mso-list-id:1088842228;
+	mso-list-type:hybrid;
+	mso-list-template-ids:103547542 491013126 -1562084940 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l8:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.5in;}
+@list l8:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-weight:normal;}
+@list l8:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l9
+	{mso-list-id:1116367747;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1244634326 67698709 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l9:level1
+	{mso-level-number-format:alpha-upper;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l9:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+@list l9:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:right;
+	margin-left:2.0in;
+	text-indent:-9.0pt;}
+@list l10
+	{mso-list-id:1797601594;
+	mso-list-type:hybrid;
+	mso-list-template-ids:753408868 -318337578 -2133848240 -1227822858 -961016800 1872662856 113036434 -1751104584 2100061342 1782465898;}
+@list l10:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.5in;}
+@list l11
+	{mso-list-id:1873690718;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2044491516 -318337578 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l11:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.5in;}
+@list l12
+	{mso-list-id:1886259173;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-81906612 67698709 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l12:level1
+	{mso-level-number-format:alpha-upper;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l12:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+@list l12:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:right;
+	margin-left:2.0in;
+	text-indent:-9.0pt;}
+@list l13
+	{mso-list-id:2062627884;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1709067670 67698709 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l13:level1
+	{mso-level-number-format:alpha-upper;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l13:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Exceptions and
+Error Handling<o:p></o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Outline<o:p></o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.5in;mso-list:l8 level1 lfo14;
+tab-stops:list .75in'><![if !supportLists]><b><span style='mso-list:Ignore'>I.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b>Handling Errors with Exceptions<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Definition
+of an Exception<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><span style='mso-bidi-font-weight:
+bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Terms<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in;mso-text-indent-alt:
+-9.0pt;mso-list:l8 level3 lfo14;tab-stops:list 1.5in'><![if !supportLists]><span
+style='mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Exception
+Object<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in;mso-text-indent-alt:
+-9.0pt;mso-list:l8 level3 lfo14;tab-stops:list 1.5in'><![if !supportLists]><span
+style='mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Exception
+Handler<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in;mso-text-indent-alt:
+-9.0pt;mso-list:l8 level3 lfo14;tab-stops:list 1.5in'><![if !supportLists]><span
+style='mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>iii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Throwing
+an exception<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in;mso-text-indent-alt:
+-9.0pt;mso-list:l8 level3 lfo14;tab-stops:list 1.5in'><![if !supportLists]><span
+style='mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>iv.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Catching
+an exception<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:99.0pt'><span style='mso-bidi-font-weight:
+bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Propagating
+Errors Up the Call Stack<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><span style='mso-bidi-font-weight:
+bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Exception
+Hierarchy<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Compiler
+complaints for exception handling<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><span style='mso-bidi-font-weight:
+bold'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.5in;mso-list:l8 level1 lfo14;
+tab-stops:list .75in'><![if !supportLists]><b><span style='mso-list:Ignore'>II.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b>Code Sample with Java Exceptions<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.5in;mso-list:l8 level1 lfo14;
+tab-stops:list .75in'><![if !supportLists]><b><span style='mso-list:Ignore'>III.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b>Catch or Specify Requirement for Methods<o:p></o:p></b></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Catch<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Specify<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Checked
+Exceptions<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Unchecked
+Exceptions<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.5in;mso-list:l8 level1 lfo14;
+tab-stops:list .75in'><![if !supportLists]><b><span style='mso-list:Ignore'>IV.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b>Catching and Handling Exceptions<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>try/catch/finally
+blocks<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.5in;mso-list:l8 level1 lfo14;
+tab-stops:list .75in'><![if !supportLists]><b><span style='mso-list:Ignore'>V.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b>Throwing Exceptions<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>throw statement<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Throwable
+class and its Subclasses<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Creating
+Custom Exception classes<b><o:p></o:p></b></span></p>
+
+<p class=MsoNormal><b><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.5in;mso-list:l8 level1 lfo14;
+tab-stops:list .75in'><![if !supportLists]><b><span style='mso-list:Ignore'>VI.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><![endif]><b>Runtime Exceptions<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.25in;mso-list:l8 level2 lfo14;
+tab-stops:list 1.0in'><![if !supportLists]><span style='mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-weight:bold'>Examples<b><o:p></o:p></b></span></p>
+
+</div>
+
+</body>
+
+</html>
