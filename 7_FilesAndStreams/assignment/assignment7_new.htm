@@ -1,0 +1,135 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<TITLE>Files and Streams</TITLE>
+</HEAD>
+<BODY><center>
+<b><font face="Arial" size="4" color="Black">Files and Streams</font></b>
+<br>
+<b><font face="Arial" size="4" color="Black">Assignment for Lecture 7</font></b>
+<br>
+<br>
+<br>
+<p align="left"><b>Instructions:</b>  
+   Write a program that allows you to write an object, specifically, the Pizza object,
+out to a file.  Then, have the program read the object from the file, displaying the contents
+of the file to the console. Use the examples from class to help you with syntax.</p>
+<br>
+<table>
+<tr>
+ <td><b>1.</b> In order to do this assignment, you will need to use the Pizza class 
+     from Assignment 4 and the custom exception class from Assignment 6. You also
+     need to use a package name for visibility reasons.  Give each of your classes (Pizza, 
+     PizzaIOException, PizzaWriter and PizzaReader) the package
+     name of pizza.  You will then need to create a directory on
+      your hard drive under your JBuilder project directory and
+      place all of these *.java files for these classes under that /pizza directory.
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+ <td><b>2.</b> Modify the Pizza class by overriding the toString() method of the Object class.  Look
+     in the Java 1.4 API for the correct method declaration of toString().  Have 
+     the implementation of your overridden method print out to the console
+     a String about this object, such as "this is the Pizza class".</td>
+</tr>
+<tr>
+</tr>
+<tr>
+ <td><b>3.</b> <font color="Blue">Create a new class called PizzaWriter.  Within this class, create a method
+     called write which is public, has no return type, passes in the parameter list an object of
+     the Pizza class and throws the PizzaIOException.</td>
+</tr>
+ <td><b>4.</b> <font color="Blue">The implementation block of the write method will take the instance of the Pizza class
+     passed in from the parameter list and write that object out to a file.  To do this, you will need to 
+     use the OutputStreamWriter chained with the FileOutputStream to 
+     create the file.  Then, use the write method of the OutputStreamWriter class to write the Pizza object
+     ,invoking the toString() method at the same time, like this:  assume variable "out" is the name
+     of my object for the OutputStreamWriter class:  out.write(pizzaObjectIn.toString());</td>
+</tr>
+<tr><td><b>5.</b> <font color="Blue"> Declare an instance variable within the PizzaWriter class that is called mFilename, is of datatype 
+	String and has accessibility of private.  Declare a default constructor to the PizzaWriter class, if 
+	it is not already there.  Now, overload the constructor by creating a second constructor.  
+	This second constructor has the following declaration:  access modifier of public, name of 
+	constructor (this must match name of class), parameter list contains a String called filename. 
+	Within the implementation of the constructor, assign the passed in String parameter to your 
+	private instance variable for filename. </td></tr>
+<tr>
+</tr>
+<tr>
+<tr>
+ <td><b>6.</b> <font color="Blue"> Now write a main method within the PizzaWriter class.  This method’s implementation must 
+do the following:  <br><br>
+<b>a.</b> Instantiate an object of the Pizza class. <br>
+<b>b.</b> Instantiate an object of the PizzaWriter class, passing into it’s constructor, a string that 
+defines the location of your output file.  For instance, pick a directory that already exists 
+on your hard-drive and use an output file called PizzaOut.dat.  The string literal that you would 
+pass into the constructor would look like this:  "c:\\temp\\PizzaOut.dat" <br>
+<b>c.</b>  Create a try/catch block. <br>
+<b>d.</b>  Within the try portion of the block, use your OutputStreamWriter object to invoke the write method.  
+Pass the object of the Pizza class into the write method’s parameter list. <br>
+<b>e.</b> Have the catch portion of the block catch the PizzaIOException.  Have a line print out to the console 
+to display the exception. </font>
+ </td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td><b>7.</b> <font color="Purple">Create a new class called PizzaReader. </font> 
+<td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>
+<b>8.</b> <font color="Purple">Declare an instance variable within the PizzaReader class that is called mFilename, is of datatype 
+	String and has accessibility of private.  Declare a default constructor to the PizzaReader class, if 
+	it is not already there.  Now, overload the constructor by creating a second constructor.  
+	This second constructor has the following declaration:  access modifier of public, name of 
+	constructor (this must match name of class), parameter list contains a String called filename. 
+	Within the implementation of the constructor, assign the passed in String parameter to your 
+	private instance variable for filename.</font>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td><b>9.</b> <font color="Purple">Within this class, create a method
+     called read which is public, has void for the return type and takes in no parameters but does
+     throw the PizzaIOException.  For the implementation of this method, use BufferedReader chained with
+InputStreamReader which is chained with the FileInputStream class to read the contents the file stored in
+the mFilename variable.</font></td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr><td><b>10.</b><font color="Purple">Now write a main method within the PizzaReader class.  This method’s implementation must 
+do the following:  <br><br>
+<b>a.</b> Instantiate an object of the PizzaReader class, passing into it’s constructor, a string that 
+defines the location of your output file.  In this case, the output file is called PizzaOut.dat, so pass
+this String literal into the constructor:  "c:\\temp\\PizzaOut.dat" <br>
+<b>b.</b>  Create a try/catch block. <br>
+<b>c.</b>  Within the try portion of the block, use your BufferedReader object to invoke its own read method 
+inside of a while or do/while loop, looking for a null when the end of the file is reached.  Print out the 
+contents of the file to the console within your while or do/while loop.  <br>
+<b>d.</b> Have the catch portion of the block catch the PizzaIOException.  Have a line print out to the console 
+to display the exception. </font></font>
+
+</tr>
+<tr><td>   
+<b>11. </b>Now, to test all of your code together, 
+first run main within the <B>PizzaWriter</B> class.<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>Verify that a file is created within the 
+c:\temp directory and it is called PizzaOut.dat.There will be no output displayed to the console yet.<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>Then, run the main of the 
+<B>PizzaReader</B> class.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>It should 
+display your Pizza info line plus the information you placed within the 
+toString() method. <B>***NOTE***</B><I>This code will <B>FAIL</B> if you do 
+<B>NOT</B> have a directory called c:\temp so create it first on your 
+own!!!!!!!!!!!!!!!!<o:p></o:p></I></P></DIV>
+</td>
+</tr>
+</table>
+</BODY>
+</HTML>
